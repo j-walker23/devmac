@@ -13,14 +13,14 @@ brew update
 # Setup Cask
 echo export HOMEBREW_CASK_OPTS=\"--appdir=/Applications\" >> .profile
 source .profile 
-brew tap phinze/cask
 brew install brew-cask
 brew install git
+brew install maven
 brew cask install caskroom/homebrew-versions/java7
 
 # Install apps
 brew tap caskroom/versions
-brew cask install 1password sublime-text3 tower slack vlc dropbox macvim filezilla bettertouchtool intellij-idea pycharm appcode
+brew cask install 1password sublime-text3 tower slack vlc dropbox macvim filezilla bettertouchtool intellij-idea pycharm appcode android-studio
 
 # Install some useful utilities 
 brew install wget
@@ -64,3 +64,13 @@ npm install -g sass
 npm install -g coffee-script
 gem update --system
 gem install compass
+
+defaults write com.apple.finder AppleShowAllFiles -boolean true ; killall Finder
+
+# http://burnedpixel.com/blog/setting-up-git-and-github-on-your-mac/#keychainhelper
+#http://olivierlacan.com/posts/why-is-git-https-not-working-on-github/
+
+cp ~/dev/devmac/ides/idea.vmoptions ~/Library/Preferences/IntellijIdea14/idea.vmoptions
+
+sudo scutil --set ComputerName "john"
+sudo scutil --set HostName "john"
