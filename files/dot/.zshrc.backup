@@ -1,0 +1,148 @@
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+export ZSH=$HOME/.oh-my-zsh
+#fpath=(/usr/local/share/zsh-completions $fpath)
+
+ZSH_THEME="doubleend"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
+ENABLE_CORRECTION="true"
+
+ulimit -n 4096
+
+plugins=(
+                zsh-syntax-highlighting
+
+		adb
+		autojump
+		brew
+		bower
+		encode64
+		httpie
+		history
+                history-substring-search
+                git
+		git-extras
+                github
+                git-hubflow
+		grunt
+	    	gradle	
+		npm
+		pip
+		python
+		pylint
+		#sudo
+		zsh_reload
+		systemadmin
+		web-search
+		wd
+		virtualenv
+		virtualenvwrapper		
+
+		mma
+                fun
+	)
+
+export HOME=/Users/john
+export DEV=$HOME/dev
+export SSH_KEY_PATH=$HOME/.ssh/id_rsa
+export PROJECT_HOME=$DEV/py_dev
+export BREW=/usr/local/Cellar
+export M2_HOME=$BREW/maven/3.3.3/libexec
+export M2=$BREW/maven/3.3.3/libexec/bin
+export GRADLE_HOME=$BREW/gradle/2.3/libexec
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home
+export NODEENV_HOME=$HOME/.nodeenv
+
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/Users/john/Library/Android/sdk/platform-tools:$PATH"
+
+source $ZSH/oh-my-zsh.sh
+
+eval "$(hub alias -s)"
+
+### settings - https://wiki.gentoo.org/wiki/Zsh/Guide ###
+setopt correctall
+setopt autocd
+setopt hist_ignore_all_dups
+
+alias zshconfig="vim ~/.zshrc"
+alias ohmyzsh="mate ~/.oh-my-zsh"
+alias fast="grunt watch --fast"
+alias engine="vim /usr/local/etc/nginx/nginx.conf"
+alias launch="vim /etc/launchd.conf"
+alias g.ulp="./node_modules/gulp/bin/gulp.js"
+
+alias mobile.purqz="ssh -p 2112 corporate@mobile.purqz.com"
+alias new.purqz="ssh purqz@purqz.com "
+
+
+
+# adb
+#alias remove="adb shell 'su -c \"mount -o rw,remount /system;pm disable com.moki.android.kiosk;pm uninstall com.moki.android.kiosk;rm /system/app/mma.apk /data/app/com.moki.android.kiosk* /data/app-lib/com.moki.android.kiosk /sdcard/MokiMDM;mount -o remount,ro /system    ;sync;reboot\"'"
+#alias install="adb shell 'su -c \"mount -o rw,remount /system;cp /sdcard/mma.apk /system/app/mma.apk;chmod 0666 /system/app/mma.apk;mount -o ro,remount /system;reboot\"'"
+alias pidmma='adb shell ps |grep kiosk'
+alias pidmt='adb shell ps |grep com.moki.touch'
+alias pidsdk='adb shell ps |grep com.example.sdktest'
+
+#pidcat
+alias logmma='pidcat com.moki.android.kiosk'
+alias logmt='pidcat com.moki.touch'
+alias logmt='pidcat com.example.sdktest'
+
+# cocoa pods
+alias podmt='cd ~/development/touch-ios; pod update'
+alias podsdk='cd ~/development/manage-sdk-ios; pod update'
+alias podiostest='cd ~/development/MokiTest-iOS; pod update'
+
+alias v='workon'
+alias v.deactivate='deactivate'
+alias v.mk='mkvirtualenv'
+alias v.rm='rmvirtualenv'
+alias v.switch='workon'
+alias v.add2virtualenv='add2virtualenv'
+alias v.cdsitepackages='cdsitepackages'
+alias v.cd='cdvirtualenv'
+alias v.lssitepackages='lssitepackages'
+
+alias py.i='pyb install_dependencies'
+
+# The next line updates PATH for the Google Cloud SDK.
+#source '/Users/john/google-cloud-sdk/path.bash.inc'
+
+# The next line enables bash completion for gcloud.
+#source '/Users/john/google-cloud-sdk/completion.bash.inc'
+
+
+export ORACLE_HOME=”/Applications/oracle/product/instantclient_64/11.2.0.4.0″
+export PATH=$ORACLE_HOME/bin:$PATH
+export DYLD_LIBRARY_PATH=$ORACLE_HOME/lib
+alias sqlplus='rlwrap sqlplus'
+alias tnsnames='vi /Applications/oracle/product/instantclient_64/11.2.0.4.0/network/admin/tnsnames.ora'
+
+
+### Extra git aliases from tj holowaychuk ###
+alias gca="git commit -a -m"
+alias gl="git log --pretty='format:%Cgreen%h%Creset %an - %s' --graph"
+
+### my git aliases ###
+alias g.s='git browse'
+alias gpr='git pull-request -b develop'
+
+### git hubflow ###
+alias hpush='git hf push'
+alias hupdate='git hf update'
+alias hpull='git hf pull'
+
+alias hfs='git hf feature start'
+alias hfco='git hf feature checkout'
+alias hff='git hf feature finish'
+
+alias hrs='git hf release start'
+alias hrf='git hf release finish'
+
+alias hhs='git hf hotfix start'
+alias hhf='git hf hotfix finish'
+
+#export EDITOR="/usr/local/bin/mate -w"
+
+### ohmy functions ###
+add_corrects
