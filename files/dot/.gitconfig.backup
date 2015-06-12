@@ -14,10 +14,10 @@
 	autocrlf = input
 [push]
 	default = current
-[credential]
-	helper = osxkeychain
 [color]
 	ui = auto
+[credential]
+	helper = osxkeychain
 [github]
 	user = j-walker23
 	token = f9a781dedcd24ddd28275cd5e2d3c61988d6fdbd

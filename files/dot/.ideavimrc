@@ -1,47 +1,9 @@
-set gdefault
-set clipboard=unnamedplus
-" ============================================================================
-" Movement
-" ============================================================================
 
-
-" Home row beginning / end of line
-noremap H ^
-noremap L $
-
-" ============================================================================
-" Editing
-" ============================================================================
-
-" Moving blocks of text in visual mode
-vnoremap < <gv
-vnoremap > >gv
-
-" Select all text
-map <Space>a ggVG
-
-" Copy until the end of the line
-noremap Y y$
-
-" Indent everything
-noremap <Space>I ggvG=
-
-" Indent selection in visual mode
-vnoremap <Space>i =
-
-" Indent the current line
-noremap <Space>i v=
-
-" Change in double quotes
-vnoremap <Space>J ci"
-
+source ~/.vimrc
 
 " ============================================================================
 " Editor control
 " ============================================================================
-
-" Enter the command-line mode
-noremap <CR> :
 
 " Reload .ideavimrc
 nnoremap <Space>vs :source ~/.ideavimrc<CR>
@@ -50,6 +12,7 @@ nnoremap <Space>vs :source ~/.ideavimrc<CR>
 " ============================================================================
 " IDE actions
 " ============================================================================
+"""
 
 nnoremap / :action Find<CR>
 nnoremap n :action FindNext<CR>
