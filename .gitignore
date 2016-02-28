@@ -1,0 +1,17 @@
+# file types
+*.pyc
+*.css
+**.js.map
+**.css.map
+*.DS_STORE
+
+# directories
+.idea/
+build/
+coverage/
+deps/
+release/
+target/
+tmp/
+vendor/
+.coverage
