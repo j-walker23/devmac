@@ -1,7 +1,0 @@
-set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
-set clipboard=unnamedplus
-set number
-
-:nnoremap U <C-r>
-
-let mapleader = " "
